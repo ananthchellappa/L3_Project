@@ -34,6 +34,7 @@ protected:
     int _id;                          // every traffic object has its own unique id
     double _posX, _posY;              // vehicle position in pixels
     std::vector<std::thread> threads; // holds all threads that have been launched within this object
+    static std::mutex _mtxCout; // L3.2 AC to control use of cout for streamlined messaging by threads
 
 private:
     static int _idCnt; // global variable for counting object ids
